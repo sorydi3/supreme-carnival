@@ -154,6 +154,19 @@ calculate(_,_,_) :- write("NOT A VALID OPERATOR").
 
 %END OF THE PROGRAME
 
+/*AEROPLANE DATABASE*/
+
+/*FORCE PROLOG TO BACKTRACK*/
+
+list_planes :- aeroplane(Plane),write(Plane),nl,fail.
+list_planes. % put here for safety reasons
+aeroplane(hurricane).
+aeroplane(spitfire).
+aeroplane(comet).
+aeroplane(harrier).
+aeroplane(jumbo).
+aeroplane(dakota).
+
 
 :-writeheader("Ibrahima Sory Diallo","Hibra"). %run at the end of every consult. // WRITE THE HEADER 
 
