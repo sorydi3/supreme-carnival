@@ -175,6 +175,25 @@ aeroplane(harrier).
 aeroplane(jumbo).
 aeroplane(dakota).
 
+/*REPEAT OPERATOR*/ % ways to write a for loop
+
+word :- write("GUESS THE WORLD TO STOP THE PROGRAM"),nl,
+    repeat, % ACT AS A DO WHILE
+    write("Enter the world!"),nl,
+    read(world),
+    fail, % Condition here
+    write("YOU GUESSED IT! CONGRAT!"). 
+
+t_test :- true,
+       write("Hello."),nl,
+       fail.
+t_test.
+
+
+r_test :- repeat,
+       write("Hello."),nl,
+       fail.
+r_test.
 
 :-writeheader("Ibrahima Sory Diallo","Hibra"). %run at the end of every consult. // WRITE THE HEADER 
 
