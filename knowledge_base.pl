@@ -215,8 +215,41 @@ loop__2(N) :-  not(N=0),
 loop__2(_).
 
 /*******************************************************************/
+%FACTORIAL  
+fac(1,1).
+fac(X,Fac) :-  Z is X - 1, fac(Z,Facc), Fac is Facc * X.
 
+%SUM OF ALL NUMBERS UP TO A NUMBER
+total(1,1).
+total(0,0).
+total(X,Total) :- AUX is X-1,total(AUX,Tot),Total is X + Tot.
 
+series(1,1).
+series(X,Total) :- AUX is X-1,series(AUX,Tot),Total is Tot + (1 / X).
+
+/********************************************************************/
+/*PRINT SPACES*/
+print_spaces(N) :- not(N=0),write(" "),M is N-1,( M=0 ; print_spaces(M)).
+   
+/*START PROGRAM*/ 
+/*print left triangle*/
+print_Stars(N) :- not(N=0),write("*"),M is N-1,( M=0 ; print_Stars(M)).
+
+/*print right triangle*/
+print_Stars(N) :- not(N=0),write("*"),M is N-1,( M=0 ; print_Stars(M)).
+
+/*BUILD LEFT TRIANGLE*/
+build(0,_).
+build(Height,Counter) :- 
+                    %write("HEIGHT: "),write(Height),
+                    %write(" COUNTER: "),write(Counter),nl,
+                    C is Counter+1 ,
+                    print_Stars(C), %print left triangle
+                    S is 150-C, %compute space to be left in between
+                    print_spaces(S),
+                    print_Stars(C), %print the right triangle
+                    nl, % new line
+                    (((H is Height+1),C = Height);build(Height,C)). % recusrsive call
 :-writeheader("Ibrahima Sory Diallo","Hibra"). %run at the end of every consult. // WRITE THE HEADER 
 
 
