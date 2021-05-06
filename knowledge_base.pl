@@ -12,6 +12,13 @@ symtome(brain_tumour,headache).
 /*END*/
 
 /*ANIMAL DATABASE SYSTEM*/
+list_animals_names :- animal(_,Name,_,_),write(Name),nl,fail.
+list_animals_names. % here for safety
+list_animals_names_and_caracteristics :- animal(_,Name,_,Car),write(Name),
+                                         write(" -> "),write(Car),nl,fail.
+list_animals_names_and_caracteristics.% this line for safety
+list_mammals_animals :- animal(mammal,Name,_,_).
+list_mammals_animals. %this line for safety
 
 animal(mammal,tiger,carnivore,stripes).
 animal(bird,eagle,carnivore,large).
@@ -21,6 +28,7 @@ animal(mammal,lion,carnivore,mane).
 animal(reptile,snake,carnivore,mane).
 animal(mammal,zebra,herbivore,stripes).
 animal(reptile,lizart,scavenger,small).
+
 
 /*END*/
 
