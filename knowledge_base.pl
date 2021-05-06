@@ -113,7 +113,20 @@ writeheader(Author,Company):- uperLowerBound,authorCompany(Author),spacer,author
 
 %END
 
+%PROGRAME -- tell wether a name is girl name or boy name
 
+init :- write("Enter name to check!"),nl,read(Name),check(Name).
+check(Name) :- boy(Name),write("it's a boy!"),nl.
+check(Name) :- girl(Name),write("it's a girl!"),nl.
+check(_) :- write("not know name,try another one!").
+boy(jason).
+boy(alfred).
+boy(joshua).
+girl(fiona).
+girl(ruth).
+girl(blodwen).
+
+%END OF THE PROGRAM
 
 :-writeheader("Ibrahima Sory Diallo","Hibra"). %run at the end of every consult. // WRITE THE HEADER 
 
