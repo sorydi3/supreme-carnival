@@ -101,10 +101,20 @@ match__(Man,Female) :- (boy(Man),girl(Female)); (man(Man),woman(Female)).
 /*END*/
 
 
+%USING RULES TO WRITE PROGRAMS
+
+go :- write("What is your name???"),read(Yourname),write("Hello, "),write(Yourname),nl.
+
+uperLowerBound :- write("*************************************************************************"),nl.
+authorCompany(Name) :- write("                             "),write(Name),write("                    "),nl.
+spacer:-write("*                                                                       *"),nl.
+
+writeheader(Author,Company):- uperLowerBound,authorCompany(Author),spacer,authorCompany(Company),uperLowerBound.
+
+%END
 
 
 
-
-
+:-writeheader("Ibrahima Sory Diallo","Hibra"). %run at the end of every consult. // WRITE THE HEADER 
 
 
