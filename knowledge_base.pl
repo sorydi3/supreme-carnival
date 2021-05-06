@@ -128,6 +128,33 @@ girl(blodwen).
 
 %END OF THE PROGRAM
 
+% CALCULATOR PROGRAME
+
+run :- write("Enter the first number A !"),nl,nl,read(A),nl,nl,
+       write("Enter the second number B ,Note(B must be greater than zero for divisions)!"),nl,nl,read(B),nl,nl,
+       write("Type the following opcions:"),nl,
+       write("a. for Adding."),nl,
+       write("s. for Substraction."),nl,
+       write("d. for Division."),nl,
+       write("m. for multiplication."),nl,
+       write("e. Exit."),nl,
+       read(Opcion),nl,calculate(Opcion,A,B).
+calculate(a,A,B) :- write("THE RESULT IS,"),nl,
+                    X is A+B,write(X).
+calculate(s,A,B) :- write("THE RESULT IS,"),nl,
+                    X is A-B,write(X).
+
+calculate(m,A,B) :- write("THE RESULT IS,"),nl,
+                    X is A*B,write(X).
+
+calculate(d,A,B) :- write("THE RESULT IS,"),nl,
+                    X is A/B,write(X).
+calculate(e,_,_) :- write("THANK YOU FOR USING THE PROGRAME! SEE YOU SOON!").
+calculate(_,_,_) :- write("NOT A VALID OPERATOR").
+
+%END OF THE PROGRAME
+
+
 :-writeheader("Ibrahima Sory Diallo","Hibra"). %run at the end of every consult. // WRITE THE HEADER 
 
 
