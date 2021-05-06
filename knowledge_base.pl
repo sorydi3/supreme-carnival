@@ -195,6 +195,28 @@ r_test :- repeat,
        fail.
 r_test.
 
+
+/*RECURSION IN PROLOG*/
+/********************************************************************************/
+loop :- write("hellow wrold"),nl,loop.
+
+loop_ :- write("Hellow world"),nl,read(World),(World ="END";loop_).
+
+loop__(end).
+loop__(_) :- write("Input somthing!"),nl,read(Somthing),loop__(Somthing).
+
+/***************************************************************************/
+loop___(0).
+loop___(N) :- write("The value of N is: "),write(N),nl,M is N-1,loop___(M).
+
+loop__2(N) :-  not(N=0),
+               write("The value of N is: "), write(N) , nl,
+               M is N-1, ( M = 0 ; loop__2(M) ).
+loop__2(_).
+
+/*******************************************************************/
+
+
 :-writeheader("Ibrahima Sory Diallo","Hibra"). %run at the end of every consult. // WRITE THE HEADER 
 
 
